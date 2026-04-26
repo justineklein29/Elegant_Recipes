@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/index.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <a class="nav-brand" href="index.html"
+        >Elegant Recipes <span>Studio</span></a
+      >
+      <div class="nav-links">
+        <div class="search-area">
+          <form id="searchForm">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search a dish e.g. adobo, pasta..."
+            />
+            <button class="btn-search" type="submit">Search</button>
+          </form>
+        </div>
+        <a href="index.html">Home</a>
+        <div class="dropdown" id="countryDropdown">
+          <button class="dropdown-btn" id="dropdownToggle">
+            🌍 Country <span class="arrow">▼</span>
+          </button>
+          <div class="dropdown-menu" id="countryList"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <span class="hero-label">✦ World Cuisine Explorer</span>
+      <h1>Elegant Recipes<br />Studio</h1>
+      <p>
+        Explore dishes from around the world — Click image for recipe details
+      </p>
+    </div>
+
+    <!-- SECTION LABEL -->
+    <div class="section-title" id="sectionTitle">
+      <h2>Today's Random Picks</h2>
+    </div>
+
+    <!-- RECIPES GRID -->
+    <div id="recipes"></div>
+
+    <!-- FOOTER -->
+    <footer>
+      <strong>Elegant Recipes Studio</strong>
+      <p style="margin-top: 0.4rem">
+        This website lets you discover free recipes from around the world.
+        <br />
+        Explore dishes with simple ingredients, cooking steps, and images. It is
+        <br />
+        powered by TheMealDB API to bring you new meal ideas anytime.
+      </p>
+    </footer>
+
+    <script src="JS/app.js"></script>
+  </body>
+</html>

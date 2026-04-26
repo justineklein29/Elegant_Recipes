@@ -1,0 +1,415 @@
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --cream: #faf6f0;
+        --brown: #2c1a0e;
+        --amber: #c8621a;
+        --amber-light: #e8873c;
+        --warm-gray: #6b5c4e;
+        --card-bg: #ffffff;
+        --border: #e8ddd3;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--brown);
+        min-height: 100vh;
+      }
+
+      /* ── NAVBAR ── */
+      nav {
+        background: var(--brown);
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 20px rgba(44, 26, 14, 0.4);
+      }
+
+      .nav-brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        color: var(--cream);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-brand span {
+        color: var(--amber-light);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-links a {
+        color: #c9b8a8;
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 6px;
+        transition: all 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--cream);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Dropdown */
+      .dropdown {
+        position: relative;
+      }
+      .search-area form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-area input {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  width: 220px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.search-area input:focus {
+  outline: 2px solid var(--amber-light);
+}
+   .btn-search {
+  background: var(--amber);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-search:hover {
+  background: var(--amber-light);
+}
+
+.btn-search:hover {
+  background: var(--amber-light);
+}
+      .dropdown-btn {
+        background: var(--amber);
+        color: #fff;
+        border: none;
+        padding: 0.45rem 1.1rem;
+        border-radius: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background 0.2s;
+      }
+      .dropdown-btn:hover {
+        background: var(--amber-light);
+      }
+
+      .dropdown-btn .arrow {
+        transition: transform 0.2s;
+        font-size: 0.7rem;
+      }
+      .dropdown.open .arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        min-width: 200px;
+        max-height: 320px;
+        overflow-y: auto;
+        box-shadow: 0 12px 40px rgba(44, 26, 14, 0.18);
+        padding: 6px;
+      }
+      .dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 0.55rem 1rem;
+        border-radius: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.9rem;
+        color: var(--brown);
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .dropdown-menu button:hover {
+        background: var(--cream);
+        color: var(--amber);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        text-align: center;
+        padding: 4rem 1rem 3rem;
+      }
+      .hero-label {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--amber);
+        margin-bottom: 1rem;
+      }
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        color: var(--brown);
+        margin-bottom: 0.8rem;
+      }
+      .hero p {
+        color: var(--warm-gray);
+        font-size: 1.05rem;
+        font-weight: 300;
+      }
+
+      /* ── SECTION LABEL ── */
+      .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        color: var(--brown);
+      }
+      .section-title p {
+        color: var(--warm-gray);
+        font-size: 0.9rem;
+        margin-top: 0.3rem;
+      }
+
+      /* ── GRID ── */
+      #recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 1.5rem;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem 4rem;
+      }
+
+      /* ── CARD ── */
+      .meal-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: fadeUp 0.4s ease both;
+      }
+      .meal-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(44, 26, 14, 0.15);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .meal-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s;
+      }
+      .meal-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .meal-card .card-body {
+        padding: 0.85rem 1rem;
+      }
+      .meal-card .card-body h6 {
+        font-family: "Playfair Display", serif;
+        font-size: 0.95rem;
+        color: var(--brown);
+        line-height: 1.35;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .meal-card .card-body .tag {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--amber);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      /* ── SKELETON LOADER ── */
+      .skeleton {
+        background: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .skeleton-img {
+        width: 100%;
+        height: 160px;
+        background: linear-gradient(
+          90deg,
+          #ede6de 25%,
+          #f5f0ea 50%,
+          #ede6de 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+      }
+      .skeleton-line {
+        height: 14px;
+        border-radius: 6px;
+        margin: 0.85rem 1rem 0.5rem;
+        background: linear-gradient(
+          90deg,
+          #ede6de 25%,
+          #f5f0ea 50%,
+          #ede6de 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+      }
+      .skeleton-line.short {
+        width: 60%;
+        margin-top: 0;
+        margin-bottom: 0.85rem;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* ── STATE MESSAGES ── */
+      .state-msg {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 3rem 1rem;
+        color: var(--warm-gray);
+        font-size: 1rem;
+      }
+      .state-msg .emoji {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 0.75rem;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--brown);
+        color: #c9b8a8;
+        text-align: center;
+        padding: 2.5rem 1rem;
+        font-size: 0.85rem;
+      }
+      footer strong {
+        color: var(--cream);
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+      }
+
+      @media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .search-area form {
+    width: 100%;
+  }
+
+  .search-area input {
+    width: 100%;
+    flex: 1;
+  }
+
+  .hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  #recipes {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 0 1rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #recipes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-brand {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Detail — Recipe Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/recipe.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <a class="nav-brand" href="index.html"
+        >Elegant Recipes <span>Studio</span></a
+      >
+      <a class="back-btn" href="index.html">← Back to Recipes</a>
+    </nav>
+
+    <!-- DYNAMIC CONTENT -->
+    <div id="loadingState">
+      <div class="spinner"></div>
+      <p>Loading recipe...</p>
+    </div>
+
+    <div id="recipeContent" style="display: none"></div>
+
+    <footer>
+      <strong>Recipe Studio</strong>
+      <p style="margin-top: 0.4rem">Recipes powered by TheMealDB</p>
+    </footer>
+
+    <script src="JS/recipe.js"></script>
+  </body>
+</html>
